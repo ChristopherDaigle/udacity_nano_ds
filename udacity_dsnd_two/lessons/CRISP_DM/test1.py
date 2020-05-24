@@ -523,10 +523,22 @@ def cat_df_check(cat_df):
 
     Prints statement related to the correctness of the dataframe provided.
     '''
-    if cat_df.equals(s.cat_df):
+
+    if cat_df.shape[1] == 147:
         print("Nice job! That looks right!")
     else:
         print("That wasn't quite as expected.  The input cat_df variable should be a dataframe of all of the categorical variables.  You can use select_dtypes to select the 'object' data type.")
+# def cat_df_check(cat_df):
+#     '''
+#     INPUT
+#     cat_df - a pandas dataframe of only the categorical columns of df
+
+#     Prints statement related to the correctness of the dataframe provided.
+#     '''
+#     if cat_df.equals(s.cat_df):
+#         print("Nice job! That looks right!")
+#     else:
+#         print("That wasn't quite as expected.  The input cat_df variable should be a dataframe of all of the categorical variables.  You can use select_dtypes to select the 'object' data type.")
 
 #Question 2
 def cat_df_dict_check(cat_df_dict):
