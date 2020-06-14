@@ -1,29 +1,34 @@
 <! DOCTYPE html>
 
 <html>
-  
+
   <head>
     <title>Udacity Task List</title>
   </head>
   <body>
     <h1>Today's TODO list</h1>
     <img src='udacity_logo.png' alt='Udacity Logo'>
-    <!-- TODO: add an id to the Udacity link tag -->
-    <a href="https://www.udacity.com">Udacity</a>    
-    <!-- TODO: Wrap the following paragraphs and list with a 
+    <!-- DONE: add an id to the Udacity link tag -->
+    <a id="udacity_link">href="https://www.udacity.com">Udacity</a>
+    <!-- DONE: Wrap the following paragraphs and list with a
        div tag. Add an id to the div tag called main-content -->
-    <!-- TODO: add a class to the the next two paragraphs
+    <!-- DONE: add a class to the the next two paragraphs
 after this comment. Call the class bold-paragraph -->
-      <p>Hi, my name is Andrew.</p>
-      <p>I am a Udacity student from Los Angeles, California</p>
+    <div id="main-content">
+      <p class="bold-paragraph">Hi! My name is Chris Daigle and I am data scientist who likes software engineering!</p>
+      <p class="bold-paragraph">I work for a company that makes jet engines and that's pretty cool.</p>
       <p>I'm currently studying for the data scientist nanodegree program</p>
-      <p>These are my tasks:</p>
-      <ul>
-          <li>Watch ten videos</li>
-          <li>Answer all the quizzes</li>
-          <li>Work on the project for 2 hours</li>
-      </ul>
+<!--        </div>
+    <div id="list_section"> -->
+      <b>Things to do this week:</b>
+    <ul>
+      <li> <b>Sunday:</b> Complete the web dev section</li>
+      <li> <b>Tuesday:</b> Complete the Portfolio Exercise</li>
+      <li> <b>Tuesday:</b> Complete the Software Engineering Portion of the Nanodegree</li>
+    </ul>
+    </div>
       <p>Here is a table of the tasks that I've completed this week</p>
+    <div id="table_section">
     <table>
       <caption>Breakdown of Tasks Completed</caption>
       <tr>
@@ -38,6 +43,7 @@ after this comment. Call the class bold-paragraph -->
         <td>Tuesday</td>
         <td>Did three quizzes</td>
     </table>
+  </div>
 
     <br>
     <nav>
@@ -47,5 +53,5 @@ after this comment. Call the class bold-paragraph -->
       <a href="https://www.w3schools.com/Jquery/default.asp">jQuery</a>
 	</nav>
   </body>
-  
+
 </html>
