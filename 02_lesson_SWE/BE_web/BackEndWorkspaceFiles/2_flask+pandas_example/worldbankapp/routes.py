@@ -13,8 +13,7 @@ print(data)
 @app.route('/index')
 def index():
     return render_template('index.html')
-    
-@app.route('/project-one')
+
+@app.route('/project_one')
 def project_one():
     return render_template('project_one.html')
-    
