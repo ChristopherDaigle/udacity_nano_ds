@@ -24,9 +24,13 @@ var arable_land_brazil = [30.924583699244103,
  33.8100342899258];
 
 var country_name_brazil = 'Brazil';
-
+// DONE: Use the year, arable_land_brazil, and country_name_brazil to create a trace for a line chart
 var trace1 = {
-/* TODO: Use the year, arable_land_brazil, and country_name_brazil to create a trace for a line chart */
+  x:year,
+  y:arable_land_brazil,
+  mode:'lines',
+  type:'scatter',
+  name:country_name_brazil
 };
 
 var arable_land_germany = [49.67917502148379,
@@ -51,9 +55,14 @@ var arable_land_germany = [49.67917502148379,
  47.9363714531384,
  47.9592041483809];
 
+// DONE: Create another trace for the Germany data using a line chart
 var country_name_germany = 'Germany';
 var trace2 = {
-/* TODO: Create another trace for the Germany data using a line chart */
+  x:year,
+  y:arable_land_germany,
+  mode:'lines',
+  type:'scatter',
+  name:country_name_germany
 };
 
 
@@ -78,9 +87,15 @@ var arable_land_china = [55.6902039146848,
  54.8084187711588,
  54.8084187711588,
  56.2229587724434];
+
+// TODO: Create another trace for the Germany data using a line chart
 var country_name_china = 'China';
 var trace3 = {
-/* TODO: Create another trace for the Germany data using a line chart */
+  x:year,
+  y:arable_land_china,
+  mode:'lines',
+  type:'scatter',
+  name:country_name_china
 };
 
 

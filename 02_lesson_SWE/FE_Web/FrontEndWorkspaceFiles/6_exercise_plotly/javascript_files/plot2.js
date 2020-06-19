@@ -8,12 +8,19 @@ var country_name_germany = 'Germany';
 var arable_land_china = [56.2229587724434];
 var country_name_china = 'China';
 
+var countries = [country_name_brazil, country_name_china, country_name_germany]
+var lands = [arable_land_brazil[0], arable_land_china[0], arable_land_germany[0]]
+
+// TODO: Use the country name and arable land data to make a bar chart
 var trace1 = {
-/* TODO: Use the country name and arable land data to make a bar chart */
+  x:countries,
+  y:lands,
+  type:'bar'
 };
 
+// TODO: include a title for the chart
 var layout = {
- /* TODO: include a title for the chart */
+  title:"Arable Land in 2015"
 };
 
 var data = [trace1];
