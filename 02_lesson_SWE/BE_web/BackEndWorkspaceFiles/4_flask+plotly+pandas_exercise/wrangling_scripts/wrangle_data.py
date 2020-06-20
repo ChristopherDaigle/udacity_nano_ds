@@ -16,7 +16,7 @@ def cleandata(dataset, keepcolumns = ['Country Name', '1990', '2015'], value_var
     Returns:
         None
 
-    """    
+    """
     df = pd.read_csv(dataset, skiprows=4)
 
     # Keep only the columns of interest (years and country name)
@@ -44,15 +44,15 @@ def return_figures():
 
     """
 
-  # first chart plots arable land from 1990 to 2015 in top 10 economies 
+  # first chart plots arable land from 1990 to 2015 in top 10 economies
   # as a line chart
-    
+
     graph_one = []
     df = cleandata('data/API_AG.LND.ARBL.HA.PC_DS2_en_csv_v2.csv')
     df.columns = ['country','year','hectaresarablelandperperson']
     df.sort_values('hectaresarablelandperperson', ascending=False, inplace=True)
     countrylist = df.country.unique().tolist()
-    
+
     for country in countrylist:
       x_val = df[df['country'] == country].year.tolist()
       y_val =  df[df['country'] == country].hectaresarablelandperperson.tolist()
@@ -71,12 +71,12 @@ def return_figures():
                 yaxis = dict(title = 'Hectares'),
                 )
 
-# second chart plots ararble land for 2015 as a bar chart    
+# second chart plots ararble land for 2015 as a bar chart
     graph_two = []
     df = cleandata('data/API_AG.LND.ARBL.HA.PC_DS2_en_csv_v2.csv')
     df.columns = ['country','year','hectaresarablelandperperson']
     df.sort_values('hectaresarablelandperperson', ascending=False, inplace=True)
-    df = df[df['year'] == 2015] 
+    df = df[df['year'] == 2015]
 
     graph_two.append(
       go.Bar(
@@ -113,20 +113,20 @@ def return_figures():
                   autotick=False, tick0=1990, dtick=25),
                 yaxis = dict(title = 'Percent'),
                 )
-    
+
 # fourth chart shows rural population vs arable land
     graph_four = []
-    
+
     valuevariables = [str(x) for x in range(1995, 2016)]
     keepcolumns = [str(x) for x in range(1995, 2016)]
     keepcolumns.insert(0, 'Country Name')
 
     df_one = cleandata('data/API_SP.RUR.TOTL_DS2_en_csv_v2_9914824.csv', keepcolumns, valuevariables)
     df_two = cleandata('data/API_AG.LND.FRST.K2_DS2_en_csv_v2_9910393.csv', keepcolumns, valuevariables)
-    
+
     df_one.columns = ['country', 'year', 'variable']
     df_two.columns = ['country', 'year', 'variable']
-    
+
     df = df_one.merge(df_two, on=['country', 'year'])
 
     for country in countrylist:
@@ -146,7 +146,7 @@ def return_figures():
           mode = 'markers',
           text = text,
           name = country,
-          textposition = 'top'
+          textposition = 'top center'
           )
       )
 
@@ -155,23 +155,40 @@ def return_figures():
                 yaxis = dict(title = 'Forest Area (square km)'),
                 )
 
+    graph_five = []
+    df_five = cleandata('data/API_SP.RUR.TOTL_DS2_en_csv_v2_9914824.csv', keepcolumns =['Country Name', '2015'], value_variables=['2015'])
+    df_five.columns = ['country','year','rural_population']
+    df_five.sort_values('rural_population', ascending=False, inplace=True)
+
+    graph_five.append(
+        go.Bar(
+        x=list(df_five['country']),
+        y=list(df_five['rural_population'])
+        )
+    )
+
+    layout_five = dict(title = 'Rural Population of Top-Ten Countries in 2015',
+                xaxis = dict(title = 'Country'),
+                yaxis = dict(title = 'Rural Population'),
+                )
     # TODO: Make a fifth chart from the data in API_SP.RUR.TOTL_DS2_en_csv_v2_9914824.csv
     # This csv file contains data about the total rural population for various countries over many years
     # Make a bar chart showing the rural population of these countries ['United States', 'China', 'Japan', 'Germany', 'United Kingdom', 'India', 'France', 'Brazil', 'Italy', 'Canada'] in the year 2015.
-    
+
     # HINT: you can use the clean_data() function. You'll need to specify the path to the csv file, and which columns you want to keep. The chart 2 code might help with understanding how to code this.
-    
-    # TODO: once the data is clean, make a list called graph_five and append the plotly graph to this list.
-    
-    # TODO: fill a layout variable for the fifth visualization
-    
+
+    # DONE: once the data is clean, make a list called graph_five and append the plotly graph to this list.
+
+    # DONE: fill a layout variable for the fifth visualization
+
     # append all charts to the figures list
     figures = []
     figures.append(dict(data=graph_one, layout=layout_one))
     figures.append(dict(data=graph_two, layout=layout_two))
     figures.append(dict(data=graph_three, layout=layout_three))
     figures.append(dict(data=graph_four, layout=layout_four))
-    
-    # TODO: append the figure five information to the figures list
-    
+    figures.append(dict(data=graph_five, layout=layout_five))
+
+    # DONE: append the figure five information to the figures list
+
     return figures
