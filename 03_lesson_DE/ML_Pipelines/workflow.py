@@ -9,7 +9,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
 from sklearn.metrics import confusion_matrix, accuracy_score
-nltk.download(['punkt', 'wordnet'])
 
 
 def load_data():
@@ -132,6 +131,7 @@ def main(clf):
     :param clf: Classifier to be fitted
     :return None: displays results
     """
+    nltk.download(['punkt', 'wordnet'])
     # 1
     X, y = load_data()
     # 2, 3
