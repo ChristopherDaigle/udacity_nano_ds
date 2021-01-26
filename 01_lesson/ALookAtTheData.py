@@ -42,7 +42,7 @@ def no_null_cols(no_nulls):
     else:
         print("That doesn't look like for the set of no nulls.  There should be {} columns in your list".format(len(s.no_nulls)))
         return display_gif('https://bit.ly/2Hog74V')
-        
+
 
 # Question 3
 def most_missing_cols(most_missing_cols):
@@ -56,20 +56,3 @@ def most_missing_cols(most_missing_cols):
         print("Nice job that looks right!")
     else:
         print("That doesn't look like for the set of most nulls.  There should be {} columns in your list".format(len(s.most_missing_cols)))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
