@@ -1,0 +1,66 @@
+/* DONE:
+- add a left margin of 25px and a right margin of 25px to the body tag */
+body {
+  margin-left:25px;
+  margin-right:25px
+}
+
+/* DONE: h1 header
+- change the h1 header to all capital letters
+- add a top and bottom margin of 20px
+hint: https://www.w3schools.com/cssref/pr_text_text-transform.asp*/
+h1 {
+  text-transform:uppercase;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+/* DONE: img
+- make the Udacity logo only half the width of the screen
+hint: https://www.w3schools.com/css/css_dimension.asp
+*/
+img {
+  width:50%
+}
+
+/* DONE: Udacity link - a#main-link {...}
+- make the Udacity link on its own line instead of next to the image - display:block
+- give the link a top and bottom margin of 20px
+- remove the underline - text-decoration:none
+- increase the font to 45px - font-size:45px
+- change the font color to gray - color:grey
+hint: the block value might be of interest - places the link on own line
+https://www.w3schools.com/cssref/pr_class_display.asp
+hint: make sure to specify the Udacity link using the id; otherwise all links will be styled like the Udacity link
+*/
+a#main-link {
+  display:block;
+  margin-top:20px;
+  margin-bottom:20px;
+  text-decoration:none;
+  font-size:45px;
+  color:grey
+}
+
+/* DONE: Div main-content id - div#main-content{...}
+- change the font of all elements inside the #main-content div to helvetica - font-family:"helvetica"
+hint: https://www.w3schools.com/cssref/pr_font_font-family.asp
+*/
+div#main-content{
+  font-family:"helvetica"
+}
+
+/* DONE: bold-paragraph class - p.bold-paragraph {...}
+- for the paragraphs with the bold-paragraph class, make the text bold
+*/
+p.bold-paragraph {
+  font-weight:bold;
+}
+
+/* DONE: table
+- draw a black border around the td elements in the table
+hint: https://www.w3schools.com/css/css_border.asp
+*/
+td {
+  border:solid black 1px
+}
