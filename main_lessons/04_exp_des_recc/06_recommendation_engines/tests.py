@@ -104,9 +104,9 @@ def popular_recommendations(user_id, n_top, ranked_movies):
 
 
 def show_clean_dataframes():
-    reviews = pd.read_csv('./reviews_clean.csv')
+    reviews = pd.read_csv('reviews_clean.csv')
     print(reviews.head())
-    movies = pd.read_csv('./movies_clean.csv')
+    movies = pd.read_csv('movies_clean.csv')
     print(movies.head())
     return reviews, movies
 
